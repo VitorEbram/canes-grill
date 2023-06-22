@@ -8,4 +8,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:prato_id>', views.churrasco, name='churrasco'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('buscar/', views.buscar, name='buscar'),
+]
