@@ -31,16 +31,12 @@ class Prato(models.Model):
     date_prato = models.DateTimeField(
         default=datetime.now, blank=True,
     )
-    
     foto_prato = models.ImageField(
         upload_to='pratos/%Y/%m',
-        blank= True
+        blank=True
     )
-    
     publicado = models.BooleanField(default=False)
-    
-    
-    
+
     def __str__(self):
         return self.nome_prato
 
