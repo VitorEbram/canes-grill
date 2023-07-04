@@ -6,6 +6,7 @@ from .models import Prato
 # Create your views here.
 def index(request):
     pratos = Prato.objects.filter(publicado=True).order_by('-date_prato')
+    #print(pratos.query)
     
     contexto = {
         'lista_pratos' : pratos,
