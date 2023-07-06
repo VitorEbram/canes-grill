@@ -165,7 +165,7 @@ def atualiza_prato(request):
             tempo_preparo = request.POST['tempo_preparo']
             rendimento = request.POST['rendimento']
             categoria = request.POST['categoria']
-            foto_prato = request.FILES['foto_prato']
+            # foto_prato = request.FILES['foto_prato']
             
             prato = Prato.objects.get(pk=prato_id)
             
@@ -175,14 +175,14 @@ def atualiza_prato(request):
             prato.tempo_preparo=tempo_preparo
             prato.rendimento=rendimento
             prato.categoria=categoria
-            if foto_prato:
-                prato.foto_prato=foto_prato
+            if 'foto_prato' in request.FILES:
+                prato.foto_prato=request.FILES['foto_prato']
                 
             prato.save()
             messages.success(request, 'Prato alterado com sucesso!')
             return redirect('dashboard')
       
-        return render(request, 'dashboard.html')
+        return redirect('dashboard')
     
     messages.error(request, 'Você não tem permissão para Criar Pratos.')
     return redirect('index')
