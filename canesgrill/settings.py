@@ -87,11 +87,11 @@ WSGI_APPLICATION = 'canesgrill.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'Mu3BMww7JClyIgBM9t37',
-        'HOST':'containers-us-west-38.railway.app',
-        'PORT':'5650',
+        'NAME': 'db_churras_trgw',
+        'USER': 'admin',
+        'PASSWORD': 'hUHMFkp9hHnKeLhNPIJUmpV18KJEorLN',
+        'HOST':'dpg-cik9ap5gkuvinfiamr60-a.oregon-postgres.render.com',
+        'PORT':'5432',
     }
 }
 
